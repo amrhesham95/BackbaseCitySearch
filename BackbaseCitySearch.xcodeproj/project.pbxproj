@@ -13,6 +13,7 @@
 		EF73B0F02849570E00A088E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0EE2849570E00A088E4 /* Main.storyboard */; };
 		EF73B0F22849571000A088E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0F12849571000A088E4 /* Assets.xcassets */; };
 		EF73B0F52849571000A088E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0F32849571000A088E4 /* LaunchScreen.storyboard */; };
+		EF73B0FD2849594900A088E4 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0FC2849594900A088E4 /* cities.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EF73B0F12849571000A088E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF73B0F42849571000A088E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF73B0F62849571000A088E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF73B0FC2849594900A088E4 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		EF73B0E72849570E00A088E4 /* BackbaseCitySearch */ = {
 			isa = PBXGroup;
 			children = (
+				EF73B0FC2849594900A088E4 /* cities.json */,
 				EF73B0E82849570E00A088E4 /* AppDelegate.swift */,
 				EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */,
 				EF73B0EC2849570E00A088E4 /* ViewController.swift */,
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF73B0FD2849594900A088E4 /* cities.json in Resources */,
 				EF73B0F52849571000A088E4 /* LaunchScreen.storyboard in Resources */,
 				EF73B0F22849571000A088E4 /* Assets.xcassets in Resources */,
 				EF73B0F02849570E00A088E4 /* Main.storyboard in Resources */,
@@ -297,6 +301,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +330,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
