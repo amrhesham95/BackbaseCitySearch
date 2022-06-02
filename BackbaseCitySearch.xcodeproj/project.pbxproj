@@ -16,6 +16,10 @@
 		EF73B0FD2849594900A088E4 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0FC2849594900A088E4 /* cities.json */; };
 		EF73B104284959EA00A088E4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B103284959EA00A088E4 /* City.swift */; };
 		EF73B10628495A1300A088E4 /* Coordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B10528495A1300A088E4 /* Coordination.swift */; };
+		EF8CB66728495F0800BA72A1 /* LocalCitiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB66628495F0800BA72A1 /* LocalCitiesFetcher.swift */; };
+		EF8CB66C284963DA00BA72A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB66B284963DA00BA72A1 /* Constants.swift */; };
+		EF8CB66E284963F000BA72A1 /* BackbaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB66D284963F000BA72A1 /* BackbaseError.swift */; };
+		EF8CB6702849640600BA72A1 /* CitiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB66F2849640600BA72A1 /* CitiesFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		EF73B0FC2849594900A088E4 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		EF73B103284959EA00A088E4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		EF73B10528495A1300A088E4 /* Coordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordination.swift; sourceTree = "<group>"; };
+		EF8CB66628495F0800BA72A1 /* LocalCitiesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCitiesFetcher.swift; sourceTree = "<group>"; };
+		EF8CB66B284963DA00BA72A1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EF8CB66D284963F000BA72A1 /* BackbaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackbaseError.swift; sourceTree = "<group>"; };
+		EF8CB66F2849640600BA72A1 /* CitiesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		EF73B0E72849570E00A088E4 /* BackbaseCitySearch */ = {
 			isa = PBXGroup;
 			children = (
+				EF8CB66A284963CF00BA72A1 /* Application */,
 				EF73B100284959AE00A088E4 /* Data */,
 				EF73B0FF284959A900A088E4 /* Domain */,
 				EF73B0FE284959A000A088E4 /* Presentation */,
@@ -87,6 +96,8 @@
 		EF73B0FF284959A900A088E4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				EF8CB66928495FF700BA72A1 /* Interfaces */,
+				EF8CB66828495FF200BA72A1 /* UseCases */,
 				EF73B101284959DE00A088E4 /* Entities */,
 			);
 			path = Domain;
@@ -95,6 +106,7 @@
 		EF73B100284959AE00A088E4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EF8CB66628495F0800BA72A1 /* LocalCitiesFetcher.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -106,6 +118,30 @@
 				EF73B10528495A1300A088E4 /* Coordination.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		EF8CB66828495FF200BA72A1 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		EF8CB66928495FF700BA72A1 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				EF8CB66F2849640600BA72A1 /* CitiesFetcher.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		EF8CB66A284963CF00BA72A1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EF8CB66B284963DA00BA72A1 /* Constants.swift */,
+				EF8CB66D284963F000BA72A1 /* BackbaseError.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +216,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF8CB66728495F0800BA72A1 /* LocalCitiesFetcher.swift in Sources */,
 				EF73B0ED2849570E00A088E4 /* ViewController.swift in Sources */,
 				EF73B10628495A1300A088E4 /* Coordination.swift in Sources */,
 				EF73B0E92849570E00A088E4 /* AppDelegate.swift in Sources */,
+				EF8CB66E284963F000BA72A1 /* BackbaseError.swift in Sources */,
+				EF8CB66C284963DA00BA72A1 /* Constants.swift in Sources */,
+				EF8CB6702849640600BA72A1 /* CitiesFetcher.swift in Sources */,
 				EF73B104284959EA00A088E4 /* City.swift in Sources */,
 				EF73B0EB2849570E00A088E4 /* SceneDelegate.swift in Sources */,
 			);
