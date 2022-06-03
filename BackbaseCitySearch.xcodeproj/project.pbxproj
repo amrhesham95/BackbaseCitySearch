@@ -10,7 +10,6 @@
 		EF73B0E92849570E00A088E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0E82849570E00A088E4 /* AppDelegate.swift */; };
 		EF73B0EB2849570E00A088E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */; };
 		EF73B0ED2849570E00A088E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EC2849570E00A088E4 /* ViewController.swift */; };
-		EF73B0F02849570E00A088E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0EE2849570E00A088E4 /* Main.storyboard */; };
 		EF73B0F22849571000A088E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0F12849571000A088E4 /* Assets.xcassets */; };
 		EF73B0F52849571000A088E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0F32849571000A088E4 /* LaunchScreen.storyboard */; };
 		EF73B0FD2849594900A088E4 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0FC2849594900A088E4 /* cities.json */; };
@@ -20,6 +19,9 @@
 		EF8CB66C284963DA00BA72A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB66B284963DA00BA72A1 /* Constants.swift */; };
 		EF8CB66E284963F000BA72A1 /* BackbaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB66D284963F000BA72A1 /* BackbaseError.swift */; };
 		EF8CB6702849640600BA72A1 /* CitiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB66F2849640600BA72A1 /* CitiesFetcher.swift */; };
+		EF8CB672284A5D6A00BA72A1 /* FetchCitiesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB671284A5D6A00BA72A1 /* FetchCitiesUseCase.swift */; };
+		EF8CB674284A5DFB00BA72A1 /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB673284A5DFB00BA72A1 /* CitiesViewModel.swift */; };
+		EF8CB676284A5F8F00BA72A1 /* CitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB675284A5F8F00BA72A1 /* CitiesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,6 @@
 		EF73B0E82849570E00A088E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EF73B0EC2849570E00A088E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EF73B0EF2849570E00A088E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF73B0F12849571000A088E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF73B0F42849571000A088E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF73B0F62849571000A088E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +39,9 @@
 		EF8CB66B284963DA00BA72A1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EF8CB66D284963F000BA72A1 /* BackbaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackbaseError.swift; sourceTree = "<group>"; };
 		EF8CB66F2849640600BA72A1 /* CitiesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesFetcher.swift; sourceTree = "<group>"; };
+		EF8CB671284A5D6A00BA72A1 /* FetchCitiesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCitiesUseCase.swift; sourceTree = "<group>"; };
+		EF8CB673284A5DFB00BA72A1 /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
+		EF8CB675284A5F8F00BA72A1 /* CitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +82,6 @@
 				EF73B0E82849570E00A088E4 /* AppDelegate.swift */,
 				EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */,
 				EF73B0EC2849570E00A088E4 /* ViewController.swift */,
-				EF73B0EE2849570E00A088E4 /* Main.storyboard */,
 				EF73B0F12849571000A088E4 /* Assets.xcassets */,
 				EF73B0F32849571000A088E4 /* LaunchScreen.storyboard */,
 				EF73B0F62849571000A088E4 /* Info.plist */,
@@ -89,6 +92,8 @@
 		EF73B0FE284959A000A088E4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EF8CB673284A5DFB00BA72A1 /* CitiesViewModel.swift */,
+				EF8CB675284A5F8F00BA72A1 /* CitiesView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 		EF8CB66828495FF200BA72A1 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				EF8CB671284A5D6A00BA72A1 /* FetchCitiesUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -205,7 +211,6 @@
 				EF73B0FD2849594900A088E4 /* cities.json in Resources */,
 				EF73B0F52849571000A088E4 /* LaunchScreen.storyboard in Resources */,
 				EF73B0F22849571000A088E4 /* Assets.xcassets in Resources */,
-				EF73B0F02849570E00A088E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,22 +228,17 @@
 				EF8CB66E284963F000BA72A1 /* BackbaseError.swift in Sources */,
 				EF8CB66C284963DA00BA72A1 /* Constants.swift in Sources */,
 				EF8CB6702849640600BA72A1 /* CitiesFetcher.swift in Sources */,
+				EF8CB672284A5D6A00BA72A1 /* FetchCitiesUseCase.swift in Sources */,
 				EF73B104284959EA00A088E4 /* City.swift in Sources */,
+				EF8CB674284A5DFB00BA72A1 /* CitiesViewModel.swift in Sources */,
 				EF73B0EB2849570E00A088E4 /* SceneDelegate.swift in Sources */,
+				EF8CB676284A5F8F00BA72A1 /* CitiesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EF73B0EE2849570E00A088E4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EF73B0EF2849570E00A088E4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EF73B0F32849571000A088E4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -378,7 +378,6 @@
 				INFOPLIST_FILE = BackbaseCitySearch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -407,7 +406,6 @@
 				INFOPLIST_FILE = BackbaseCitySearch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

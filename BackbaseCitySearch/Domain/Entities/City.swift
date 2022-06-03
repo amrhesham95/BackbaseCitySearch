@@ -7,7 +7,7 @@
 
 import Foundation
 // MARK: - City
-struct City: Decodable {
+struct City: Decodable, Identifiable {
     let country, name: String?
     let id: Int?
     let coordination: Coordination?
