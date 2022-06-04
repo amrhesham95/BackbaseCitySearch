@@ -25,6 +25,7 @@
 		EF8CB678284A6A7500BA72A1 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB677284A6A7500BA72A1 /* ViewModelState.swift */; };
 		EF8CB67A284A6A9700BA72A1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB679284A6A9700BA72A1 /* BaseViewModel.swift */; };
 		EF8CB67C284B7F1A00BA72A1 /* FilterCitiesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB67B284B7F1A00BA72A1 /* FilterCitiesUseCase.swift */; };
+		EF8CB680284BCCD100BA72A1 /* AdvancedFilterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB67F284BCCD100BA72A1 /* AdvancedFilterUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		EF8CB677284A6A7500BA72A1 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
 		EF8CB679284A6A9700BA72A1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		EF8CB67B284B7F1A00BA72A1 /* FilterCitiesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCitiesUseCase.swift; sourceTree = "<group>"; };
+		EF8CB67F284BCCD100BA72A1 /* AdvancedFilterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFilterUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				EF8CB671284A5D6A00BA72A1 /* FetchAllCitiesUseCase.swift */,
 				EF8CB67B284B7F1A00BA72A1 /* FilterCitiesUseCase.swift */,
+				EF8CB67F284BCCD100BA72A1 /* AdvancedFilterUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				EF8CB6702849640600BA72A1 /* CitiesFetcher.swift in Sources */,
 				EF8CB678284A6A7500BA72A1 /* ViewModelState.swift in Sources */,
 				EF8CB672284A5D6A00BA72A1 /* FetchAllCitiesUseCase.swift in Sources */,
+				EF8CB680284BCCD100BA72A1 /* AdvancedFilterUseCase.swift in Sources */,
 				EF73B104284959EA00A088E4 /* City.swift in Sources */,
 				EF8CB674284A5DFB00BA72A1 /* CitiesViewModel.swift in Sources */,
 				EF73B0EB2849570E00A088E4 /* SceneDelegate.swift in Sources */,

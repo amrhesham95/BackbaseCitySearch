@@ -18,3 +18,13 @@ struct City: Decodable, Identifiable {
         case coordination = "coord"
     }
 }
+
+extension City: Hashable {
+    static func == (lhs: City, rhs: City) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}

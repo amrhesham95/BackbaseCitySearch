@@ -42,7 +42,7 @@ class CitiesViewModel: BaseViewModel, CitiesViewModelContract {
     
     // MARK: - Init
     init(fetchCitiesUseCase: FetchCitiesUseCaseContract = FetchAllCitiesUseCase(citiesFetcher: LocalCitiesFetcher()),
-         filterCitiesUseCase: FilterCitiesUseCaseContract = FilterCitiesUseCase()
+         filterCitiesUseCase: FilterCitiesUseCaseContract = AdvancedFilterUseCase()
     ) {
         self.fetchCitiesUseCase = fetchCitiesUseCase
         self.filterCitiesUseCase = filterCitiesUseCase
@@ -59,7 +59,7 @@ class CitiesViewModel: BaseViewModel, CitiesViewModelContract {
             .sink {
                 print($0)
             } receiveValue: { [weak self] in
-                self?.allCities = $0
+                self?.allCities = $0.sorted(by: { ($0.name ?? "", $0.country ?? "") <= ($1.name ?? "", $1.country ?? "") })
                 self?.filteredCities = $0
             }.store(in: &cancellables)
     }
