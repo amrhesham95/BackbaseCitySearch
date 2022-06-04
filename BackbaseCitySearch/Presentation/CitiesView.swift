@@ -10,18 +10,26 @@ import SwiftUI
 struct CitiesView<ViewModel>: View where ViewModel: CitiesViewModelContract {
     @StateObject var viewModel: ViewModel
     
-//    init(viewModel: ViewModel) {
-//        self.viewModel = viewModel
-//    }
+    //    init(viewModel: ViewModel) {
+    //        self.viewModel = viewModel
+    //    }
     
     var body: some View {
         TextField("Search", text: $viewModel.searchText)
         List {
             ForEach(viewModel.selectedCities) { city in
-                HStack {
-                    Text(city.name ?? "")
-                    Text(city.country ?? "")
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(city.name ?? "")
+                        Text(city.country ?? "")
+                    }.font(.title2)
+                    
+                    VStack(alignment: .leading) {
+                        Text("lat: \(city.coordination?.lat ?? 0)")
+                        Text("long: \(city.coordination?.lon ?? 0)")
+                    }.font(.subheadline)
                 }
+                
             }
             Text("Loading More Universities")
                 .onAppear {
