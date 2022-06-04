@@ -9,16 +9,16 @@ import Foundation
 import Combine
 
 protocol FetchCitiesUseCaseContract {
-    func fetchAllCities() -> AnyPublisher<[City], Error>
+    func execute() -> AnyPublisher<[City], Error>
 }
 
-class FetchCitiesUseCase: FetchCitiesUseCaseContract {
+class FetchAllCitiesUseCase: FetchCitiesUseCaseContract {
     private let citiesFetcher: CitiesFetcher
     
     init(citiesFetcher: CitiesFetcher) {
         self.citiesFetcher = citiesFetcher
     }
-    func fetchAllCities() -> AnyPublisher<[City], Error> {
+    func execute() -> AnyPublisher<[City], Error> {
         return citiesFetcher.loadCities()
     }
 }

@@ -8,20 +8,25 @@
 import SwiftUI
 
 struct CitiesView<ViewModel>: View where ViewModel: CitiesViewModelContract {
-    private let viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     
-    init(viewModel: ViewModel) {
-        self.viewModel = viewModel
-    }
+//    init(viewModel: ViewModel) {
+//        self.viewModel = viewModel
+//    }
     
     var body: some View {
+        TextField("Search", text: $viewModel.searchText)
         List {
-            ForEach(viewModel.cities) { city in
+            ForEach(viewModel.selectedCities) { city in
                 HStack {
                     Text(city.name ?? "")
                     Text(city.country ?? "")
                 }
             }
+            Text("Loading More Universities")
+                .onAppear {
+                    viewModel.loadMoreCitiesIfNeeded()
+                }
         }
     }
 }

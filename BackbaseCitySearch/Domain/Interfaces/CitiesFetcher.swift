@@ -15,19 +15,14 @@ class LocalCitiesFetcher: CitiesFetcher {
             fatalError("please add \(Constants.citiesFileName).json")
         }
         let fileURL = URL(fileURLWithPath: path)
-        
-        do {
-            let data = try Data(contentsOf: fileURL)
-            let response = try JSONDecoder().decode([City].self, from: data)
-            return Future<[City], Error> { promise in
-                promise(.success(response))
-            }.eraseToAnyPublisher()
-        } catch {
-            return Future<[City], Error> { promise in
-                promise(.failure(BackbaseError.fileReadingError))
-            }
+        return Just(try? Data(contentsOf: fileURL))
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: RunLoop.main)
+            .tryMap({
+                guard let data = $0 else { throw BackbaseError.fileReadingError }
+                return data
+            })
+            .decode(type: [City].self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
-        }
-
     }
 }
