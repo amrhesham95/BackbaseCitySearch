@@ -26,6 +26,7 @@
 		EF8CB67A284A6A9700BA72A1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB679284A6A9700BA72A1 /* BaseViewModel.swift */; };
 		EF8CB67C284B7F1A00BA72A1 /* FilterCitiesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB67B284B7F1A00BA72A1 /* FilterCitiesUseCase.swift */; };
 		EF8CB680284BCCD100BA72A1 /* AdvancedFilterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB67F284BCCD100BA72A1 /* AdvancedFilterUseCase.swift */; };
+		EF8CB684284BDE9700BA72A1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB683284BDE9700BA72A1 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		EF8CB679284A6A9700BA72A1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		EF8CB67B284B7F1A00BA72A1 /* FilterCitiesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCitiesUseCase.swift; sourceTree = "<group>"; };
 		EF8CB67F284BCCD100BA72A1 /* AdvancedFilterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFilterUseCase.swift; sourceTree = "<group>"; };
+		EF8CB683284BDE9700BA72A1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		EF73B0E72849570E00A088E4 /* BackbaseCitySearch */ = {
 			isa = PBXGroup;
 			children = (
+				EF8CB681284BDE7900BA72A1 /* Common */,
 				EF8CB66A284963CF00BA72A1 /* Application */,
 				EF73B100284959AE00A088E4 /* Data */,
 				EF73B0FF284959A900A088E4 /* Domain */,
@@ -162,6 +165,22 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		EF8CB681284BDE7900BA72A1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EF8CB682284BDE7E00BA72A1 /* Coordinator */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EF8CB682284BDE7E00BA72A1 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EF8CB683284BDE9700BA72A1 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,6 +254,7 @@
 			files = (
 				EF8CB66728495F0800BA72A1 /* LocalCitiesFetcher.swift in Sources */,
 				EF73B0ED2849570E00A088E4 /* ViewController.swift in Sources */,
+				EF8CB684284BDE9700BA72A1 /* AppCoordinator.swift in Sources */,
 				EF73B10628495A1300A088E4 /* Coordination.swift in Sources */,
 				EF8CB67A284A6A9700BA72A1 /* BaseViewModel.swift in Sources */,
 				EF73B0E92849570E00A088E4 /* AppDelegate.swift in Sources */,
