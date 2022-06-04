@@ -27,10 +27,12 @@ class DefaultAppCoordinator: AppCoordinator {
         let fetchUseCase = FetchAllCitiesUseCase(citiesFetcher: citiesFetcher)
         let filterCitiesUseCase = AdvancedFilterUseCase()
         let vm = CitiesViewModel(fetchCitiesUseCase: fetchUseCase, filterCitiesUseCase: filterCitiesUseCase)
-        navigationController.pushViewController(UIHostingController(rootView:  CitiesView(viewModel: vm)), animated: true)
+        navigationController.pushViewController(UIHostingController(rootView:  CitiesView(viewModel: vm, coordinator: self)), animated: true)
     }
 
     
     func showDetailsFor(_ city: City) {
+        let view = CityDetailsView(city: city)
+        navigationController.pushViewController(UIHostingController(rootView: view), animated: true)
     }
 }

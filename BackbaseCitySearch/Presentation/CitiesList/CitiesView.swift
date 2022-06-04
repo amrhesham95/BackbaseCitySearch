@@ -9,10 +9,7 @@ import SwiftUI
 
 struct CitiesView<ViewModel>: View where ViewModel: CitiesViewModelContract {
     @StateObject var viewModel: ViewModel
-    
-    //    init(viewModel: ViewModel) {
-    //        self.viewModel = viewModel
-    //    }
+    weak var coordinator: AppCoordinator?
     
     var body: some View {
         TextField("Search", text: $viewModel.searchText)
@@ -29,8 +26,11 @@ struct CitiesView<ViewModel>: View where ViewModel: CitiesViewModelContract {
                         Text("long: \(city.coordination?.lon ?? 0)")
                     }.font(.subheadline)
                 }
-                
+                .onTapGesture {
+                    coordinator?.showDetailsFor(city)
+                }
             }
+            
             Text("Loading More Universities")
                 .onAppear {
                     viewModel.loadMoreCitiesIfNeeded()
@@ -39,8 +39,8 @@ struct CitiesView<ViewModel>: View where ViewModel: CitiesViewModelContract {
     }
 }
 
-struct CitiesView_Previews: PreviewProvider {
-    static var previews: some View {
-        CitiesView(viewModel: CitiesViewModel())
-    }
-}
+//struct CitiesView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CitiesView(viewModel: CitiesViewModel())
+//    }
+//}
