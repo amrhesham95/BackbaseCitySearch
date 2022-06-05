@@ -14,8 +14,6 @@ protocol CitiesViewModelContract: ObservableObject {
     var selectedCitiesPublished: Published<[City]> { get }
     
     var searchText: String { get set }
-    var searchTextPublished: Published<String> { get }
-    var searchTextPublisher: Published<String>.Publisher { get }
     
     func loadCities()
     func loadMoreCitiesIfNeeded()
@@ -30,8 +28,6 @@ class CitiesViewModel: BaseViewModel, CitiesViewModelContract {
     var selectedCitiesPublished: Published<[City]> {_selectedCities}
     
     @Published var searchText = ""
-    var searchTextPublished: Published<String> {_searchText}
-    var searchTextPublisher: Published<String>.Publisher { $searchText}
     
     private let fetchCitiesUseCase: FetchCitiesUseCaseContract
     private let filterCitiesUseCase: FilterCitiesUseCaseContract
@@ -41,8 +37,8 @@ class CitiesViewModel: BaseViewModel, CitiesViewModelContract {
     private var pageSize = 20
     
     // MARK: - Init
-    init(fetchCitiesUseCase: FetchCitiesUseCaseContract = FetchAllCitiesUseCase(citiesFetcher: LocalCitiesFetcher()),
-         filterCitiesUseCase: FilterCitiesUseCaseContract = AdvancedFilterUseCase()
+    init(fetchCitiesUseCase: FetchCitiesUseCaseContract,
+         filterCitiesUseCase: FilterCitiesUseCaseContract
     ) {
         self.fetchCitiesUseCase = fetchCitiesUseCase
         self.filterCitiesUseCase = filterCitiesUseCase
@@ -97,9 +93,12 @@ private extension CitiesViewModel {
     }
     
     func startObservingSearchTextChange() {
-        $searchText.drop(while: {$0.isEmpty}).receive(on: RunLoop.main).sink { [weak self] in
-            self?.filterCities($0)
-        }.store(in: &cancellables)
+        $searchText.dropFirst()
+            .removeDuplicates()
+            .receive(on: RunLoop.main)
+            .sink { [weak self] in
+                self?.filterCities($0)
+            }.store(in: &cancellables)
     }
     
     func startObservingFilteredCities() {
