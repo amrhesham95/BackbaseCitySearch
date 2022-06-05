@@ -11,6 +11,7 @@ import Combine
 protocol CitiesViewModelContract: ObservableObject {
     var selectedCities: [City] { get }
     var searchText: String { get set }
+    var shouldHideLoadingMoreCitiesText: Bool { get }
     func loadMoreCitiesIfNeeded()
 }
 
@@ -19,6 +20,9 @@ class CitiesViewModel: BaseViewModel, CitiesViewModelContract {
     // MARK: - Properties
     @Published var selectedCities: [City] = []
     @Published var searchText = ""
+    var shouldHideLoadingMoreCitiesText: Bool {
+         return !(filteredCities.count > selectedCities.count)
+    }
     
     @Published private var filteredCities = [City]()
     private let fetchCitiesUseCase: FetchCitiesUseCaseContract

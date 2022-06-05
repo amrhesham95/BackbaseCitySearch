@@ -12,15 +12,23 @@ struct CitiesView<ViewModel>: View where ViewModel: CitiesViewModelContract {
     weak var coordinator: AppCoordinator?
     
     var body: some View {
-        TextField("Search", text: $viewModel.searchText)        
-        List(viewModel.selectedCities, id: \.self.id) { city in
-            CityRow(city: city)
-        }.id(UUID())
-        
-        Text("Loading More Universities")
-            .onAppear {
-                viewModel.loadMoreCitiesIfNeeded()
+        TextField("Enter a city name", text: $viewModel.searchText)
+        List() {
+            ForEach(viewModel.selectedCities) { city in
+                CityRow(city: city)
             }
-        
+            Text("Loading More Universities")
+                .onAppear {
+                    viewModel.loadMoreCitiesIfNeeded()
+                }.isHidden(viewModel.shouldHideLoadingMoreCitiesText)
+        }
+    }
+}
+
+extension View {
+    /// - Parameter isHidden: A Boolean value that indicates whether to hide the View.
+    /// - Returns: A view that is hidden or not.
+    func isHidden(_ isHidden: Bool) -> Self? {
+        isHidden ? nil : self
     }
 }
