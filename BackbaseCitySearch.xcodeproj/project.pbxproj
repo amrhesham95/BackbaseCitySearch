@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EF56A8EB284CE00500A0510E /* CitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A8EA284CE00500A0510E /* CitiesView.swift */; };
 		EF56A8ED284CE01200A0510E /* CityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A8EC284CE01200A0510E /* CityRow.swift */; };
+		EF56A8F5284D0AC100A0510E /* BackbaseCitySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A8F4284D0AC100A0510E /* BackbaseCitySearchTests.swift */; };
 		EF73B0E92849570E00A088E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0E82849570E00A088E4 /* AppDelegate.swift */; };
 		EF73B0EB2849570E00A088E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */; };
 		EF73B0ED2849570E00A088E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EC2849570E00A088E4 /* ViewController.swift */; };
@@ -31,9 +32,21 @@
 		EF8CB688284BE62E00BA72A1 /* CityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CB687284BE62D00BA72A1 /* CityDetailsView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EF56A8F6284D0AC100A0510E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF73B0DD2849570E00A088E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF73B0E42849570E00A088E4;
+			remoteInfo = BackbaseCitySearch;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		EF56A8EA284CE00500A0510E /* CitiesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesView.swift; sourceTree = "<group>"; };
 		EF56A8EC284CE01200A0510E /* CityRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRow.swift; sourceTree = "<group>"; };
+		EF56A8F2284D0AC100A0510E /* BackbaseCitySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackbaseCitySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF56A8F4284D0AC100A0510E /* BackbaseCitySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackbaseCitySearchTests.swift; sourceTree = "<group>"; };
 		EF73B0E52849570E00A088E4 /* BackbaseCitySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackbaseCitySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF73B0E82849570E00A088E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EF56A8EF284D0AC100A0510E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EF73B0E22849570E00A088E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,10 +98,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EF56A8F3284D0AC100A0510E /* BackbaseCitySearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF56A8F4284D0AC100A0510E /* BackbaseCitySearchTests.swift */,
+			);
+			path = BackbaseCitySearchTests;
+			sourceTree = "<group>";
+		};
 		EF73B0DC2849570E00A088E4 = {
 			isa = PBXGroup;
 			children = (
 				EF73B0E72849570E00A088E4 /* BackbaseCitySearch */,
+				EF56A8F3284D0AC100A0510E /* BackbaseCitySearchTests */,
 				EF73B0E62849570E00A088E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				EF73B0E52849570E00A088E4 /* BackbaseCitySearch.app */,
+				EF56A8F2284D0AC100A0510E /* BackbaseCitySearchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +244,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EF56A8F1284D0AC100A0510E /* BackbaseCitySearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF56A8F8284D0AC100A0510E /* Build configuration list for PBXNativeTarget "BackbaseCitySearchTests" */;
+			buildPhases = (
+				EF56A8EE284D0AC100A0510E /* Sources */,
+				EF56A8EF284D0AC100A0510E /* Frameworks */,
+				EF56A8F0284D0AC100A0510E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF56A8F7284D0AC100A0510E /* PBXTargetDependency */,
+			);
+			name = BackbaseCitySearchTests;
+			productName = BackbaseCitySearchTests;
+			productReference = EF56A8F2284D0AC100A0510E /* BackbaseCitySearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EF73B0E42849570E00A088E4 /* BackbaseCitySearch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF73B0F92849571000A088E4 /* Build configuration list for PBXNativeTarget "BackbaseCitySearch" */;
@@ -241,6 +289,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					EF56A8F1284D0AC100A0510E = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = EF73B0E42849570E00A088E4;
+					};
 					EF73B0E42849570E00A088E4 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -260,11 +312,19 @@
 			projectRoot = "";
 			targets = (
 				EF73B0E42849570E00A088E4 /* BackbaseCitySearch */,
+				EF56A8F1284D0AC100A0510E /* BackbaseCitySearchTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EF56A8F0284D0AC100A0510E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EF73B0E32849570E00A088E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,6 +338,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EF56A8EE284D0AC100A0510E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF56A8F5284D0AC100A0510E /* BackbaseCitySearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EF73B0E12849570E00A088E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +374,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		EF56A8F7284D0AC100A0510E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF73B0E42849570E00A088E4 /* BackbaseCitySearch */;
+			targetProxy = EF56A8F6284D0AC100A0510E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		EF73B0F32849571000A088E4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -318,6 +394,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EF56A8F9284D0AC100A0510E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9UCYSD8Q8F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.exdevs.BackbaseCitySearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BackbaseCitySearch.app/BackbaseCitySearch";
+			};
+			name = Debug;
+		};
+		EF56A8FA284D0AC100A0510E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9UCYSD8Q8F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.exdevs.BackbaseCitySearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BackbaseCitySearch.app/BackbaseCitySearch";
+			};
+			name = Release;
+		};
 		EF73B0F72849571000A088E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -493,6 +605,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EF56A8F8284D0AC100A0510E /* Build configuration list for PBXNativeTarget "BackbaseCitySearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF56A8F9284D0AC100A0510E /* Debug */,
+				EF56A8FA284D0AC100A0510E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EF73B0E02849570E00A088E4 /* Build configuration list for PBXProject "BackbaseCitySearch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
