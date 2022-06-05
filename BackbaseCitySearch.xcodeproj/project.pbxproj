@@ -19,6 +19,7 @@
 		EF56A90D284D256F00A0510E /* CitiesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A90C284D256F00A0510E /* CitiesViewModelTests.swift */; };
 		EF56A90F284D611500A0510E /* MockFetchCitiesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A90E284D611500A0510E /* MockFetchCitiesUseCase.swift */; };
 		EF56A911284D613200A0510E /* MockFilterCitiesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A910284D613100A0510E /* MockFilterCitiesUseCase.swift */; };
+		EF56A914284D659200A0510E /* View+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A913284D659200A0510E /* View+Helpers.swift */; };
 		EF73B0E92849570E00A088E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0E82849570E00A088E4 /* AppDelegate.swift */; };
 		EF73B0EB2849570E00A088E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */; };
 		EF73B0ED2849570E00A088E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EC2849570E00A088E4 /* ViewController.swift */; };
@@ -65,6 +66,7 @@
 		EF56A90C284D256F00A0510E /* CitiesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModelTests.swift; sourceTree = "<group>"; };
 		EF56A90E284D611500A0510E /* MockFetchCitiesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchCitiesUseCase.swift; sourceTree = "<group>"; };
 		EF56A910284D613100A0510E /* MockFilterCitiesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFilterCitiesUseCase.swift; sourceTree = "<group>"; };
+		EF56A913284D659200A0510E /* View+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Helpers.swift"; sourceTree = "<group>"; };
 		EF73B0E52849570E00A088E4 /* BackbaseCitySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackbaseCitySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF73B0E82849570E00A088E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +175,14 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		EF56A912284D657D00A0510E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF56A913284D659200A0510E /* View+Helpers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EF73B0DC2849570E00A088E4 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +204,7 @@
 		EF73B0E72849570E00A088E4 /* BackbaseCitySearch */ = {
 			isa = PBXGroup;
 			children = (
+				EF56A912284D657D00A0510E /* Extensions */,
 				EF8CB681284BDE7900BA72A1 /* Common */,
 				EF8CB66A284963CF00BA72A1 /* Application */,
 				EF73B100284959AE00A088E4 /* Data */,
@@ -432,6 +443,7 @@
 				EF73B10628495A1300A088E4 /* Coordination.swift in Sources */,
 				EF8CB67A284A6A9700BA72A1 /* BaseViewModel.swift in Sources */,
 				EF73B0E92849570E00A088E4 /* AppDelegate.swift in Sources */,
+				EF56A914284D659200A0510E /* View+Helpers.swift in Sources */,
 				EF8CB66E284963F000BA72A1 /* BackbaseError.swift in Sources */,
 				EF8CB66C284963DA00BA72A1 /* Constants.swift in Sources */,
 				EF8CB67C284B7F1A00BA72A1 /* FilterCitiesUseCase.swift in Sources */,
