@@ -11,6 +11,10 @@
 		EF56A8ED284CE01200A0510E /* CityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A8EC284CE01200A0510E /* CityRow.swift */; };
 		EF56A8F5284D0AC100A0510E /* LocalCitiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A8F4284D0AC100A0510E /* LocalCitiesFetcher.swift */; };
 		EF56A8FC284D115B00A0510E /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A8FB284D115B00A0510E /* TestConstants.swift */; };
+		EF56A901284D11BF00A0510E /* FetchAllCitiesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A900284D11BF00A0510E /* FetchAllCitiesUseCaseTests.swift */; };
+		EF56A903284D143700A0510E /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A902284D143700A0510E /* MockData.swift */; };
+		EF56A905284D16C500A0510E /* TestsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A904284D16C500A0510E /* TestsError.swift */; };
+		EF56A908284D1AC200A0510E /* MockCitiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A907284D1AC200A0510E /* MockCitiesFetcher.swift */; };
 		EF73B0E92849570E00A088E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0E82849570E00A088E4 /* AppDelegate.swift */; };
 		EF73B0EB2849570E00A088E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */; };
 		EF73B0ED2849570E00A088E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EC2849570E00A088E4 /* ViewController.swift */; };
@@ -49,6 +53,10 @@
 		EF56A8F2284D0AC100A0510E /* BackbaseCitySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackbaseCitySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF56A8F4284D0AC100A0510E /* LocalCitiesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCitiesFetcher.swift; sourceTree = "<group>"; };
 		EF56A8FB284D115B00A0510E /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
+		EF56A900284D11BF00A0510E /* FetchAllCitiesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllCitiesUseCaseTests.swift; sourceTree = "<group>"; };
+		EF56A902284D143700A0510E /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		EF56A904284D16C500A0510E /* TestsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsError.swift; sourceTree = "<group>"; };
+		EF56A907284D1AC200A0510E /* MockCitiesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCitiesFetcher.swift; sourceTree = "<group>"; };
 		EF73B0E52849570E00A088E4 /* BackbaseCitySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackbaseCitySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF73B0E82849570E00A088E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,10 +111,46 @@
 		EF56A8F3284D0AC100A0510E /* BackbaseCitySearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				EF56A8F4284D0AC100A0510E /* LocalCitiesFetcher.swift */,
-				EF56A8FB284D115B00A0510E /* TestConstants.swift */,
+				EF56A906284D1AB800A0510E /* Mocks */,
+				EF56A8FF284D11AA00A0510E /* Domain */,
+				EF56A8FE284D11A500A0510E /* Common */,
+				EF56A8FD284D11A000A0510E /* Data */,
 			);
 			path = BackbaseCitySearchTests;
+			sourceTree = "<group>";
+		};
+		EF56A8FD284D11A000A0510E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EF56A8F4284D0AC100A0510E /* LocalCitiesFetcher.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EF56A8FE284D11A500A0510E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EF56A8FB284D115B00A0510E /* TestConstants.swift */,
+				EF56A904284D16C500A0510E /* TestsError.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EF56A8FF284D11AA00A0510E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EF56A900284D11BF00A0510E /* FetchAllCitiesUseCaseTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		EF56A906284D1AB800A0510E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				EF56A902284D143700A0510E /* MockData.swift */,
+				EF56A907284D1AC200A0510E /* MockCitiesFetcher.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		EF73B0DC2849570E00A088E4 = {
@@ -346,7 +390,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF56A8F5284D0AC100A0510E /* LocalCitiesFetcher.swift in Sources */,
+				EF56A903284D143700A0510E /* MockData.swift in Sources */,
+				EF56A908284D1AC200A0510E /* MockCitiesFetcher.swift in Sources */,
+				EF56A905284D16C500A0510E /* TestsError.swift in Sources */,
 				EF56A8FC284D115B00A0510E /* TestConstants.swift in Sources */,
+				EF56A901284D11BF00A0510E /* FetchAllCitiesUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
