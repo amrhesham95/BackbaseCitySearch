@@ -8,13 +8,10 @@
 import SwiftUI
 
 struct CityRow: View {
-    static var numbers = 0
     let city: City
     
     init(city: City) {
         self.city = city
-        CityRow.numbers += 1
-        print(CityRow.numbers)
     }
     var body: some View {
         LazyVStack(alignment: .leading) {

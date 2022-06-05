@@ -74,8 +74,7 @@ private extension CitiesViewModel {
         state = .loading
         fetchCitiesUseCase.execute()
             .receive(on: RunLoop.main)
-            .sink {
-                print($0)
+            .sink { _ in
             } receiveValue: { [weak self] in
                 guard let self = self else { return }
                 self.allCities = $0.sorted(by: { ($0.name ?? "", $0.country ?? "") <= ($1.name ?? "", $1.country ?? "") })

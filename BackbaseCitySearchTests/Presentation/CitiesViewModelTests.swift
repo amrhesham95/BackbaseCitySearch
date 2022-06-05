@@ -41,8 +41,7 @@ class CitiesViewModelTests: XCTestCase {
         
         sut.$searchText.dropFirst().removeDuplicates()
             .receive(on: RunLoop.main)
-            .sink { searchText in
-                print(searchText)
+            .sink { _ in
                 exp.fulfill()
             }.store(in: &cancellables)
         sut.searchText = "name"
@@ -57,8 +56,7 @@ class CitiesViewModelTests: XCTestCase {
         
         sut.$searchText.dropFirst().removeDuplicates()
             .receive(on: RunLoop.main)
-            .sink { searchText in
-                print(searchText)
+            .sink { _ in
                 exp.fulfill()
             }.store(in: &cancellables)
         sut.searchText = "name"
