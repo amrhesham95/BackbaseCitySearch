@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		EF56A8EB284CE00500A0510E /* CitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A8EA284CE00500A0510E /* CitiesView.swift */; };
 		EF56A8ED284CE01200A0510E /* CityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A8EC284CE01200A0510E /* CityRow.swift */; };
-		EF56A8F5284D0AC100A0510E /* BackbaseCitySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A8F4284D0AC100A0510E /* BackbaseCitySearchTests.swift */; };
+		EF56A8F5284D0AC100A0510E /* LocalCitiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A8F4284D0AC100A0510E /* LocalCitiesFetcher.swift */; };
+		EF56A8FC284D115B00A0510E /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A8FB284D115B00A0510E /* TestConstants.swift */; };
 		EF73B0E92849570E00A088E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0E82849570E00A088E4 /* AppDelegate.swift */; };
 		EF73B0EB2849570E00A088E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */; };
 		EF73B0ED2849570E00A088E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EC2849570E00A088E4 /* ViewController.swift */; };
@@ -46,7 +47,8 @@
 		EF56A8EA284CE00500A0510E /* CitiesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesView.swift; sourceTree = "<group>"; };
 		EF56A8EC284CE01200A0510E /* CityRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRow.swift; sourceTree = "<group>"; };
 		EF56A8F2284D0AC100A0510E /* BackbaseCitySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackbaseCitySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF56A8F4284D0AC100A0510E /* BackbaseCitySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackbaseCitySearchTests.swift; sourceTree = "<group>"; };
+		EF56A8F4284D0AC100A0510E /* LocalCitiesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCitiesFetcher.swift; sourceTree = "<group>"; };
+		EF56A8FB284D115B00A0510E /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		EF73B0E52849570E00A088E4 /* BackbaseCitySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackbaseCitySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF73B0E82849570E00A088E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +103,8 @@
 		EF56A8F3284D0AC100A0510E /* BackbaseCitySearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				EF56A8F4284D0AC100A0510E /* BackbaseCitySearchTests.swift */,
+				EF56A8F4284D0AC100A0510E /* LocalCitiesFetcher.swift */,
+				EF56A8FB284D115B00A0510E /* TestConstants.swift */,
 			);
 			path = BackbaseCitySearchTests;
 			sourceTree = "<group>";
@@ -342,7 +345,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF56A8F5284D0AC100A0510E /* BackbaseCitySearchTests.swift in Sources */,
+				EF56A8F5284D0AC100A0510E /* LocalCitiesFetcher.swift in Sources */,
+				EF56A8FC284D115B00A0510E /* TestConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
