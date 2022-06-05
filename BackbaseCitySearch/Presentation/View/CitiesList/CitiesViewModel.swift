@@ -10,29 +10,20 @@ import Combine
 
 protocol CitiesViewModelContract: ObservableObject {
     var selectedCities: [City] { get }
-    var citiesPublisher: Published<[City]>.Publisher { get }
-    var selectedCitiesPublished: Published<[City]> { get }
-    
     var searchText: String { get set }
-    
-    func loadCities()
     func loadMoreCitiesIfNeeded()
-    
 }
 
 class CitiesViewModel: BaseViewModel, CitiesViewModelContract {
     
     // MARK: - Properties
     @Published var selectedCities: [City] = []
-    var citiesPublisher: Published<[City]>.Publisher {$selectedCities}
-    var selectedCitiesPublished: Published<[City]> {_selectedCities}
-    
     @Published var searchText = ""
     
+    @Published private var filteredCities = [City]()
     private let fetchCitiesUseCase: FetchCitiesUseCaseContract
     private let filterCitiesUseCase: FilterCitiesUseCaseContract
     private var allCities = [City]()
-    @Published private var filteredCities = [City]()
     private var pageNumber = 0
     private var pageSize = 20
     
@@ -47,20 +38,8 @@ class CitiesViewModel: BaseViewModel, CitiesViewModelContract {
         startObservingFilteredCities()
         loadCities()
     }
-    
-    func loadCities() {
-        state = .loading
-        fetchCitiesUseCase.execute()
-            .receive(on: RunLoop.main)
-            .sink {
-                print($0)
-            } receiveValue: { [weak self] in
-                guard let self = self else { return }
-                self.allCities = $0.sorted(by: { ($0.name ?? "", $0.country ?? "") <= ($1.name ?? "", $1.country ?? "") })
-                self.filteredCities = self.allCities
-            }.store(in: &cancellables)
-    }
-    
+        
+    /* mobile side pagination to avoid SwiftUI performance issue when updating the list with big array */
     func loadMoreCitiesIfNeeded() {
         var pageOfCities = [City]()
         var lowerBound = 0
@@ -83,7 +62,22 @@ class CitiesViewModel: BaseViewModel, CitiesViewModelContract {
     }
 }
 
+// MARK: - Private Helpers
+//
 private extension CitiesViewModel {
+    
+    func loadCities() {
+        state = .loading
+        fetchCitiesUseCase.execute()
+            .receive(on: RunLoop.main)
+            .sink {
+                print($0)
+            } receiveValue: { [weak self] in
+                guard let self = self else { return }
+                self.allCities = $0.sorted(by: { ($0.name ?? "", $0.country ?? "") <= ($1.name ?? "", $1.country ?? "") })
+                self.filteredCities = self.allCities
+            }.store(in: &cancellables)
+    }
     
     func filterCities(_ prefix: String) {
         filterCitiesUseCase.execute(allCities: allCities, prefix: prefix) { [weak self] cities in

@@ -31,7 +31,7 @@ class FilterCitiesUseCaseTests: XCTestCase {
             XCTAssertEqual(cities, MockData.mockCities)
             exp.fulfill()
         }
-        wait(for: [exp], timeout: TestConstants.expectationWaitTime)
+        wait(for: [exp], timeout: TestConstants.dataLoadingWaitTime)
     }
     
     func testFilterCitiesUseCase_whenExecutedCalledWithPrefix_onlyMatchingCitiesAreReturned() {
@@ -41,7 +41,7 @@ class FilterCitiesUseCaseTests: XCTestCase {
             XCTAssertEqual(cities, MockData.mockCities.filter {$0.name?.hasPrefix(prefix) ?? false})
             exp.fulfill()
         }
-        wait(for: [exp], timeout: TestConstants.expectationWaitTime)
+        wait(for: [exp], timeout: TestConstants.dataLoadingWaitTime)
     }
         
     func testFilterCitiesUseCase_whenExecutedCalledWithnotFoundPrefix_emptyListReturned() {
@@ -50,6 +50,6 @@ class FilterCitiesUseCaseTests: XCTestCase {
             XCTAssertEqual(cities.count, 0)
             exp.fulfill()
         }
-        wait(for: [exp], timeout: TestConstants.expectationWaitTime)
+        wait(for: [exp], timeout: TestConstants.dataLoadingWaitTime)
     }
 }

@@ -37,7 +37,7 @@ class FetchAllCitiesUseCaseTests: XCTestCase {
                 exp.fulfill()
             }.store(in: &cancellables)
         
-        wait(for: [exp], timeout: TestConstants.expectationWaitTime)
+        wait(for: [exp], timeout: TestConstants.dataLoadingWaitTime)
     }
     
     func testFetchAllCitiesUseCase_whenExecutedCalled_citiesReturnedCorrectly() {
@@ -50,7 +50,7 @@ class FetchAllCitiesUseCaseTests: XCTestCase {
                 exp.fulfill()
             }.store(in: &cancellables)
         
-        wait(for: [exp], timeout: TestConstants.expectationWaitTime)
+        wait(for: [exp], timeout: TestConstants.dataLoadingWaitTime)
     }
     
 }

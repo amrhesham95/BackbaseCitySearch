@@ -9,5 +9,6 @@ import Foundation
 
 struct TestConstants {
     static let citiesCount = 209557
-    static let expectationWaitTime: TimeInterval = 10
+    static let defaultWaitTime: TimeInterval = 2
+    static let dataLoadingWaitTime: TimeInterval = 10
 }

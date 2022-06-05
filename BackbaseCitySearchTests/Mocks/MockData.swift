@@ -14,4 +14,11 @@ class MockData {
         .init(country: "country2", name: "name2", id: 2, coordination: Coordination(lon: 2, lat: 2)),
         .init(country: "country3", name: "name3", id: 3, coordination: Coordination(lon: 3, lat: 3))
     ]
+    
+    static var mockSelectedCities: [City] = [
+        .init(country: "selected1", name: "name1", id: 1, coordination: Coordination(lon: 1, lat: 1)),
+        .init(country: "selected2", name: "name2", id: 2, coordination: Coordination(lon: 2, lat: 2)),
+        .init(country: "selected3", name: "name3", id: 3, coordination: Coordination(lon: 3, lat: 3))
+    ]
+
 }

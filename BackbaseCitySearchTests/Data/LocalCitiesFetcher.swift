@@ -35,7 +35,7 @@ class LocalCityFetcherTests: XCTestCase {
                 exp.fulfill()
             }.store(in: &cancellables)
         
-        wait(for: [exp], timeout: TestConstants.expectationWaitTime)
+        wait(for: [exp], timeout: TestConstants.dataLoadingWaitTime)
     }
 
 }
