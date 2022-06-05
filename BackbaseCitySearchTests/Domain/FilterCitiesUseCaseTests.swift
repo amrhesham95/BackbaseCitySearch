@@ -36,22 +36,14 @@ class FilterCitiesUseCaseTests: XCTestCase {
     
     func testFilterCitiesUseCase_whenExecutedCalledWithPrefix_onlyMatchingCitiesAreReturned() {
         let exp = expectation(description: "FilterCitiesUseCase test case failed")
-        sut.execute(allCities: MockData.mockCities, prefix: "name") { cities in
-            XCTAssertEqual(cities.count, 3)
+        let prefix = "name"
+        sut.execute(allCities: MockData.mockCities, prefix: prefix) { cities in
+            XCTAssertEqual(cities, MockData.mockCities.filter {$0.name?.hasPrefix(prefix) ?? false})
             exp.fulfill()
         }
         wait(for: [exp], timeout: TestConstants.expectationWaitTime)
     }
-    
-    func testFilterCitiesUseCase_whenExecutedCalledWithPrefix_onlyMatchingCitiesAreReturned2() {
-        let exp = expectation(description: "FilterCitiesUseCase test case failed")
-        sut.execute(allCities: MockData.mockCities, prefix: "name1") { cities in
-            XCTAssertEqual(cities.count, 1)
-            exp.fulfill()
-        }
-        wait(for: [exp], timeout: TestConstants.expectationWaitTime)
-    }
-    
+        
     func testFilterCitiesUseCase_whenExecutedCalledWithnotFoundPrefix_emptyListReturned() {
         let exp = expectation(description: "FilterCitiesUseCase test case failed")
         sut.execute(allCities: MockData.mockCities, prefix: "zxcv") { cities in
