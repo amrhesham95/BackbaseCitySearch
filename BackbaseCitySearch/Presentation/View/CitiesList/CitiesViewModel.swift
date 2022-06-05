@@ -55,8 +55,9 @@ class CitiesViewModel: BaseViewModel, CitiesViewModelContract {
             .sink {
                 print($0)
             } receiveValue: { [weak self] in
-                self?.allCities = $0.sorted(by: { ($0.name ?? "", $0.country ?? "") <= ($1.name ?? "", $1.country ?? "") })
-                self?.filteredCities = $0
+                guard let self = self else { return }
+                self.allCities = $0.sorted(by: { ($0.name ?? "", $0.country ?? "") <= ($1.name ?? "", $1.country ?? "") })
+                self.filteredCities = self.allCities
             }.store(in: &cancellables)
     }
     
