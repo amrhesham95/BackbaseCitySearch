@@ -9,7 +9,7 @@ import Foundation
 
 enum ViewModelState {
     case failure
-    case finished
+    case idle
     case success
     case loading
 }

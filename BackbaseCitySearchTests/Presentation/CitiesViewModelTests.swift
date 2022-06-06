@@ -35,6 +35,23 @@ class CitiesViewModelTests: XCTestCase {
         XCTAssertTrue(mockFetchCitiesUseCase.isFetchCitiesUseCaseExecuted)
     }
     
+    func testCitiesViewModel_whenStateIsLoading_isLoadingFinishedIsFalse() {
+        // When
+        sut.state = .loading
+        
+        // Then
+        XCTAssertFalse(sut.isLoadingFinished)
+    }
+    
+    func testCitiesViewModel_whenStateIsSuccess_isLoadingFinishedIsTrue() {
+        // When
+        sut.state = .success
+        
+        // Then
+        XCTAssertTrue(sut.isLoadingFinished)
+    }
+
+    
     func testCitiesViewModel_whenSearchTextChange_filterUseCaseIsExecuted() {
         let exp = expectation(description: "TestCitiesViewModel Test Case Failed")
         

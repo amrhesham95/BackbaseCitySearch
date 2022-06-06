@@ -86,7 +86,7 @@ private extension CitiesViewModel {
                 guard let self = self else { return }
                  switch $0 {
                 case .finished:
-                    self.state = .finished
+                    self.state = .idle
                     
                  case .failure( _):
                     self.state = .failure
