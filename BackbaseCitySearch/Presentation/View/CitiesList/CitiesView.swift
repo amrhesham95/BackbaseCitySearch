@@ -19,6 +19,9 @@ struct CitiesView<ViewModel>: View where ViewModel: CitiesViewModelContract {
         List() {
             ForEach(viewModel.selectedCities) { city in
                 CityRow(city: city)
+                    .onTapGesture {
+                        coordinator?.showDetailsFor(city)
+                    }
             }
             Text("Loading More Universities")
                 .onAppear {

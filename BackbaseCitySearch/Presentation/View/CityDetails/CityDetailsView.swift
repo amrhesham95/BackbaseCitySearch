@@ -20,6 +20,12 @@ struct CityDetailsView: View {
         
     }
     var body: some View {
+        HStack {
+            Text(city.name ?? "")
+                .padding()
+                .font(.title)
+            Spacer()
+        }
         Map(coordinateRegion: $region)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
