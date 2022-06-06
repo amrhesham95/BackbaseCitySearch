@@ -13,6 +13,9 @@ struct CitiesView<ViewModel>: View where ViewModel: CitiesViewModelContract {
     
     var body: some View {
         TextField("Enter a city name", text: $viewModel.searchText)
+            .padding()
+        
+        Text("Number of cities: \(viewModel.numberOfCities)")
         List() {
             ForEach(viewModel.selectedCities) { city in
                 CityRow(city: city)
