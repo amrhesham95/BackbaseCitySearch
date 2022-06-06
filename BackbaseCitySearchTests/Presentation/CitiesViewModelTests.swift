@@ -50,7 +50,41 @@ class CitiesViewModelTests: XCTestCase {
         // Then
         XCTAssertTrue(sut.isLoadingFinished)
     }
+    
+    func testCitiesViewModel_whenAllCitiesAreSelected_shouldHideLoadingMoreCitiesTextIsTrue() {
+        // Given
+        let exp = expectation(description: "testCitiesViewModel")
+        mockFetchCitiesUseCase.execute()
+            .receive(on: RunLoop.main)
+            .sink { _ in
+            } receiveValue: { _ in
+                exp.fulfill()
+            }.store(in: &cancellables)
 
+        wait(for: [exp], timeout: TestConstants.defaultWaitTime)
+        
+        // Then
+        XCTAssertTrue(sut.shouldHideLoadingMoreCitiesText)
+    }
+    
+    func testCitiesViewModel_whenNotAllCitiesAreSelected_shouldHideLoadingMoreCitiesTextIsFalse() {
+        // Given
+        let exp = expectation(description: "testCitiesViewModel")
+        mockFetchCitiesUseCase.execute()
+            .receive(on: RunLoop.main)
+            .sink { _ in
+            } receiveValue: { _ in
+                exp.fulfill()
+            }.store(in: &cancellables)
+
+        wait(for: [exp], timeout: TestConstants.defaultWaitTime)
+        
+        // When
+        sut.selectedCities = []
+        // Then
+        XCTAssertFalse(sut.shouldHideLoadingMoreCitiesText)
+    }
+    
     
     func testCitiesViewModel_whenSearchTextChange_filterUseCaseIsExecuted() {
         let exp = expectation(description: "TestCitiesViewModel Test Case Failed")
