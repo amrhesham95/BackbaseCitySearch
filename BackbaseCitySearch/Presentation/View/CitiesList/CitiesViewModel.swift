@@ -12,6 +12,7 @@ protocol CitiesViewModelContract: ObservableObject {
     var selectedCities: [City] { get }
     var searchText: String { get set }
     var numberOfCities: String { get }
+    var isLoadingFinished: Bool { get }
     var shouldHideLoadingMoreCitiesText: Bool { get }
     func loadMoreCitiesIfNeeded()
 }
@@ -26,6 +27,9 @@ class CitiesViewModel: BaseViewModel, CitiesViewModelContract {
     }
     var shouldHideLoadingMoreCitiesText: Bool {
          return !(filteredCities.count > selectedCities.count)
+    }
+    var isLoadingFinished: Bool {
+        state != .loading
     }
     
     @Published private var filteredCities = [City]()
@@ -78,9 +82,18 @@ private extension CitiesViewModel {
         state = .loading
         fetchCitiesUseCase.execute()
             .receive(on: RunLoop.main)
-            .sink { _ in
+            .sink { [weak self] in
+                guard let self = self else { return }
+                 switch $0 {
+                case .finished:
+                    self.state = .finished
+                    
+                 case .failure( _):
+                    self.state = .failure
+                }
             } receiveValue: { [weak self] in
                 guard let self = self else { return }
+                self.state = .success
                 self.allCities = $0.sorted(by: { ($0.name ?? "", $0.country ?? "") <= ($1.name ?? "", $1.country ?? "") })
                 self.filteredCities = self.allCities
             }.store(in: &cancellables)

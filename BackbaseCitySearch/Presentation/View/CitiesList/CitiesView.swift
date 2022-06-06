@@ -12,21 +12,25 @@ struct CitiesView<ViewModel>: View where ViewModel: CitiesViewModelContract {
     weak var coordinator: AppCoordinator?
     
     var body: some View {
-        TextField("Enter a city name", text: $viewModel.searchText)
-            .padding()
-        
-        Text("Number of cities: \(viewModel.numberOfCities)")
-        List() {
-            ForEach(viewModel.selectedCities) { city in
-                CityRow(city: city)
-                    .onTapGesture {
-                        coordinator?.showDetailsFor(city)
-                    }
+        ZStack {
+            TextField("Enter a city name", text: $viewModel.searchText)
+                .padding()
+            
+            Text("Number of cities: \(viewModel.numberOfCities)")
+            List() {
+                ForEach(viewModel.selectedCities) { city in
+                    CityRow(city: city)
+                        .onTapGesture {
+                            coordinator?.showDetailsFor(city)
+                        }
+                }
+                Text("Loading More Universities")
+                    .onAppear {
+                        viewModel.loadMoreCitiesIfNeeded()
+                    }.isHidden(viewModel.shouldHideLoadingMoreCitiesText)
             }
-            Text("Loading More Universities")
-                .onAppear {
-                    viewModel.loadMoreCitiesIfNeeded()
-                }.isHidden(viewModel.shouldHideLoadingMoreCitiesText)
+            ProgressView()
+                .isHidden(viewModel.isLoadingFinished)
         }
     }
 }

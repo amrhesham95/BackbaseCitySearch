@@ -30,9 +30,3 @@ struct CityDetailsView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
-
-//struct CityDetails_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CityDetailsView()
-//    }
-//}
