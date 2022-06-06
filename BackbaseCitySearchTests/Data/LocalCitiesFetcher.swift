@@ -27,10 +27,14 @@ class LocalCityFetcherTests: XCTestCase {
     
     func testCityFetcher_whenFetchingCities_citiesAreFetchedCorrectly() {
         let exp = expectation(description: "Cities loading test case failed")
+        
+        // When
         sut.loadCities()
             .sink { _ in
                 
             } receiveValue: { cities in
+                
+                // Then
                 XCTAssertEqual(cities.count, TestConstants.citiesCount)
                 exp.fulfill()
             }.store(in: &cancellables)
