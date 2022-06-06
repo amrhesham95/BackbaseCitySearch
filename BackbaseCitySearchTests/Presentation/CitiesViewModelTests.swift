@@ -32,6 +32,7 @@ class CitiesViewModelTests: XCTestCase {
     }
     
     func testCitiesViewModel_whenInit_fetchAllCitiesIsExecuted() {
+        // Then
         XCTAssertTrue(mockFetchCitiesUseCase.isFetchCitiesUseCaseExecuted)
     }
     
@@ -90,6 +91,7 @@ class CitiesViewModelTests: XCTestCase {
         let exp = expectation(description: "TestCitiesViewModel Test Case Failed")
         
         
+        // When
         sut.$searchText.dropFirst().removeDuplicates()
             .receive(on: RunLoop.main)
             .sink { _ in
@@ -97,6 +99,8 @@ class CitiesViewModelTests: XCTestCase {
             }.store(in: &cancellables)
         sut.searchText = "name"
         wait(for: [exp], timeout: TestConstants.defaultWaitTime)
+        
+        // Then
         XCTAssertTrue(mockfilterCitiesUseCase.isFilterCitiesUseCaseExecuted)
     }
     
@@ -104,7 +108,7 @@ class CitiesViewModelTests: XCTestCase {
     func testCitiesViewModel_whenSearchTextChange_selectedCitiesIsUpdated() {
         let exp = expectation(description: "TestCitiesViewModel Test Case Failed")
         
-        
+        // When
         sut.$searchText.dropFirst().removeDuplicates()
             .receive(on: RunLoop.main)
             .sink { _ in
@@ -112,6 +116,8 @@ class CitiesViewModelTests: XCTestCase {
             }.store(in: &cancellables)
         sut.searchText = "name"
         wait(for: [exp], timeout: TestConstants.defaultWaitTime)
+        
+        // Then
         XCTAssertEqual(sut.selectedCities, MockData.mockSelectedCities)
     }
 }

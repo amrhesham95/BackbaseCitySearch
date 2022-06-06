@@ -29,10 +29,13 @@ class FetchAllCitiesUseCaseTests: XCTestCase {
     
     func testFetchAllCitiesUseCase_whenExecutedCalled_loadCitiesIsCalled() {
         let exp = expectation(description: "FetchAllCitiesUseCase test case failed")
+        
+        // When
         sut.execute()
             .sink { _ in
                 
             } receiveValue: { [weak self] cities in
+                // Then
                 XCTAssertTrue(self?.mockCitiesFetcher.isLoadCitiesCalled ?? false)
                 exp.fulfill()
             }.store(in: &cancellables)
@@ -42,10 +45,13 @@ class FetchAllCitiesUseCaseTests: XCTestCase {
     
     func testFetchAllCitiesUseCase_whenExecutedCalled_citiesReturnedCorrectly() {
         let exp = expectation(description: "FetchAllCitiesUseCase test case failed")
+        
+        // When
         sut.execute()
             .sink { _ in
                 
             } receiveValue: { cities in
+                // Then
                 XCTAssertEqual(cities, MockData.mockCities)
                 exp.fulfill()
             }.store(in: &cancellables)
