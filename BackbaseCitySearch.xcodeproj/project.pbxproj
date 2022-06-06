@@ -22,7 +22,6 @@
 		EF56A914284D659200A0510E /* View+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF56A913284D659200A0510E /* View+Helpers.swift */; };
 		EF73B0E92849570E00A088E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0E82849570E00A088E4 /* AppDelegate.swift */; };
 		EF73B0EB2849570E00A088E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */; };
-		EF73B0ED2849570E00A088E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF73B0EC2849570E00A088E4 /* ViewController.swift */; };
 		EF73B0F22849571000A088E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0F12849571000A088E4 /* Assets.xcassets */; };
 		EF73B0F52849571000A088E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0F32849571000A088E4 /* LaunchScreen.storyboard */; };
 		EF73B0FD2849594900A088E4 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = EF73B0FC2849594900A088E4 /* cities.json */; };
@@ -70,7 +69,6 @@
 		EF73B0E52849570E00A088E4 /* BackbaseCitySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackbaseCitySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF73B0E82849570E00A088E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EF73B0EC2849570E00A088E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EF73B0F12849571000A088E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF73B0F42849571000A088E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF73B0F62849571000A088E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -211,9 +209,6 @@
 				EF73B0FF284959A900A088E4 /* Domain */,
 				EF73B0FE284959A000A088E4 /* Presentation */,
 				EF73B0FC2849594900A088E4 /* cities.json */,
-				EF73B0E82849570E00A088E4 /* AppDelegate.swift */,
-				EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */,
-				EF73B0EC2849570E00A088E4 /* ViewController.swift */,
 				EF73B0F12849571000A088E4 /* Assets.xcassets */,
 				EF73B0F32849571000A088E4 /* LaunchScreen.storyboard */,
 				EF73B0F62849571000A088E4 /* Info.plist */,
@@ -277,10 +272,8 @@
 		EF8CB66A284963CF00BA72A1 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				EF8CB66B284963DA00BA72A1 /* Constants.swift */,
-				EF8CB66D284963F000BA72A1 /* BackbaseError.swift */,
-				EF8CB677284A6A7500BA72A1 /* ViewModelState.swift */,
-				EF8CB679284A6A9700BA72A1 /* BaseViewModel.swift */,
+				EF73B0E82849570E00A088E4 /* AppDelegate.swift */,
+				EF73B0EA2849570E00A088E4 /* SceneDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -288,6 +281,10 @@
 		EF8CB681284BDE7900BA72A1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EF8CB66B284963DA00BA72A1 /* Constants.swift */,
+				EF8CB66D284963F000BA72A1 /* BackbaseError.swift */,
+				EF8CB677284A6A7500BA72A1 /* ViewModelState.swift */,
+				EF8CB679284A6A9700BA72A1 /* BaseViewModel.swift */,
 				EF8CB682284BDE7E00BA72A1 /* Coordinator */,
 			);
 			path = Common;
@@ -438,7 +435,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF8CB66728495F0800BA72A1 /* LocalCitiesFetcher.swift in Sources */,
-				EF73B0ED2849570E00A088E4 /* ViewController.swift in Sources */,
 				EF8CB684284BDE9700BA72A1 /* AppCoordinator.swift in Sources */,
 				EF73B10628495A1300A088E4 /* Coordination.swift in Sources */,
 				EF8CB67A284A6A9700BA72A1 /* BaseViewModel.swift in Sources */,

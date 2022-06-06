@@ -13,21 +13,24 @@ struct CitiesView<ViewModel>: View where ViewModel: CitiesViewModelContract {
     
     var body: some View {
         ZStack {
-            TextField("Enter a city name", text: $viewModel.searchText)
-                .padding()
             
-            Text("Number of cities: \(viewModel.numberOfCities)")
-            List() {
-                ForEach(viewModel.selectedCities) { city in
-                    CityRow(city: city)
-                        .onTapGesture {
-                            coordinator?.showDetailsFor(city)
-                        }
+            VStack {
+                TextField("Enter a city name", text: $viewModel.searchText)
+                    .padding()
+                
+                Text("Number of cities: \(viewModel.numberOfCities)")
+                List() {
+                    ForEach(viewModel.selectedCities) { city in
+                        CityRow(city: city)
+                            .onTapGesture {
+                                coordinator?.showDetailsFor(city)
+                            }
+                    }
+                    Text("Loading More Universities")
+                        .onAppear {
+                            viewModel.loadMoreCitiesIfNeeded()
+                        }.isHidden(viewModel.shouldHideLoadingMoreCitiesText)
                 }
-                Text("Loading More Universities")
-                    .onAppear {
-                        viewModel.loadMoreCitiesIfNeeded()
-                    }.isHidden(viewModel.shouldHideLoadingMoreCitiesText)
             }
             ProgressView()
                 .isHidden(viewModel.isLoadingFinished)
