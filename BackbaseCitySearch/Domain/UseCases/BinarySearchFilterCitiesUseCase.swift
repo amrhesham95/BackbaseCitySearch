@@ -6,7 +6,11 @@
 //
 
 import Foundation
-class AdvancedFilterUseCase: FilterCitiesUseCaseContract {
+
+protocol FilterCitiesUseCaseContract {
+    func execute(allCities: [City], prefix: String, completion: @escaping (([City]) -> Void))
+}
+class BinarySearchFilterCitiesUseCase: FilterCitiesUseCaseContract {
     func execute(allCities: [City], prefix: String, completion: @escaping (([City]) -> Void)) {
         if prefix.isEmpty {
             completion(allCities)
@@ -37,7 +41,7 @@ class AdvancedFilterUseCase: FilterCitiesUseCaseContract {
         // Find all cities starting with the search string
         var result = [City]()
         if resultIndex > -1 {
-            for index in stride(from: resultIndex, to: 0, by: -1) {
+            for index in stride(from: resultIndex, to: -1, by: -1) {
                 guard let cityName = allCities[index].name?.lowercased() else { return }
                 if cityName.starts(with: lowerCasedSearchString) == false {
                     break

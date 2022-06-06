@@ -25,7 +25,7 @@ class DefaultAppCoordinator: AppCoordinator {
     func start() {
         let citiesFetcher = LocalCitiesFetcher()
         let fetchUseCase = FetchAllCitiesUseCase(citiesFetcher: citiesFetcher)
-        let filterCitiesUseCase = AdvancedFilterUseCase()
+        let filterCitiesUseCase = BinarySearchFilterCitiesUseCase()
         let vm = CitiesViewModel(fetchCitiesUseCase: fetchUseCase, filterCitiesUseCase: filterCitiesUseCase)
         navigationController.pushViewController(UIHostingController(rootView:  CitiesView(viewModel: vm, coordinator: self)), animated: true)
     }

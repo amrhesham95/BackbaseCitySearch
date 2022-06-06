@@ -10,12 +10,12 @@ import Combine
 @testable import BackbaseCitySearch
 
 class FilterCitiesUseCaseTests: XCTestCase {
-    private var sut: FilterCitiesUseCase!
+    private var sut: BinarySearchFilterCitiesUseCase!
     private var cancellables: Set<AnyCancellable>!
     
     override func setUp() {
         cancellables = []
-        sut = FilterCitiesUseCase()
+        sut = BinarySearchFilterCitiesUseCase()
         super.setUp()
     }
     
